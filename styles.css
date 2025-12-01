@@ -1,0 +1,40 @@
+:root {
+    --grid-columns: 12;
+    --gutter: 24px;
+    --page-margin: 48px;
+  
+    --overlay-color: rgba(255, 0, 0, 0.08);
+    --primary: #1659F3;       /* blue */
+    --primary-hover: #093BAE; /* navy */
+  }
+  
+  /* Reset */
+  * {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+  }
+  
+  body {
+    font-family: sans-serif;
+  }
+  
+  /* ===============================
+     MAIN LAYOUT GRID (full width)
+     =============================== */
+  
+  .page {
+    min-height: 100vh;
+    padding: 80px 0;
+  }
+  
+  /* REAL GRID */
+  .page-inner {
+    width: calc(100% - (2 * var(--page-margin))); /* 48px margin left/right */
+    margin: 0 auto;
+  
+    display: grid;
+    grid-template-columns: repeat(var(--grid-columns), 1fr);
+    column-gap: var(--gutter);
+  }
+  

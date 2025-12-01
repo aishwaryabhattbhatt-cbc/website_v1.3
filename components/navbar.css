@@ -1,0 +1,122 @@
+/* ============================
+   NAVIGATION BAR COMPONENT
+   ============================ */
+
+/* Outer fixed bar */
+.nav-bar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 78px;
+    background-color: white;
+    border-bottom: 2px solid var(--primary);
+    z-index: 200;
+  
+    display: flex;
+    align-items: center;
+  }
+  
+  /* Inner container aligned to page margin */
+  .nav-inner {
+    width: calc(100% - (2 * var(--page-margin))); /* uses your 48px side margins */
+    margin: 0 auto;
+    height: 100%;
+  
+    display: flex;
+    align-items: center;
+    justify-content: space-between; /* LEFT block | RIGHT block */
+  }
+  
+  /* ============================
+     LEFT SIDE: LOGO + MENU
+     ============================ */
+  
+  .nav-main {
+    display: flex;
+    align-items: center;
+    gap: 24px; /* spacing between logo and menu */
+  }
+  
+  /* Logo image */
+  .nav-logo-img {
+    height: 36px;
+    width: auto;
+    display: block;
+  }
+  
+  /* Menu container */
+  .nav-menu {
+    display: flex;
+    align-items: center;
+    gap: 12px; /* spacing between menu buttons */
+  }
+  
+  /* Because menu buttons use .btn-menu from buttons.css,
+     no styling needed here for button appearance */
+  
+  /* ============================
+     RIGHT SIDE: CTA + LANGUAGE
+     ============================ */
+  
+  .nav-actions {
+    display: flex;
+    align-items: center;
+    gap: 16px; /* spacing between secondary, primary, lang toggle */
+  }
+  
+  /* Language toggle group */
+  .lang-toggle-group {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px; /* small spacing between FR and EN */
+  }
+  
+  /* The .lang-toggle buttons themselves are styled in buttons.css */
+  
+  /* ============================
+     RESPONSIVE 
+     ============================ */
+  
+/* ============================
+   TABLET NAV BAR ADJUSTMENTS
+   ============================ */
+   @media (max-width: 1024px) {
+
+    /* reduce spacing on left block (logo + menu) */
+    .nav-main {
+      gap: 12px;            /* was 48px */
+    }
+  
+    /* reduce spacing between menu buttons */
+    .nav-menu {
+      gap: 0px;             /* was 24px */
+    }
+  
+    /* spacing on right block (CTA + lang toggle) */
+    .nav-actions {
+      gap: 12px;            /* was 24px */
+    }
+  
+    /* smaller logo on tablet */
+    .nav-logo-img {
+      height: 30px;         /* was 42px */
+    }
+  
+    /* language toggle only INSIDE nav (optional) */
+    .nav-actions .lang-toggle {
+      font-size: 12px;      /* was 16px */
+    }
+  
+    .nav-actions .lang-toggle .lang-icon {
+      width: 12px;          /* was 14px */
+      height: 12px;
+    }
+  }
+  
+   
+
+
+
+  
+  

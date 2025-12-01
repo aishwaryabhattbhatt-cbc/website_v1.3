@@ -1,0 +1,49 @@
+/* ===============================
+   VISUAL OVERLAY GRID
+   =============================== */
+
+   .grid-overlay {
+    position: fixed;
+    inset: 0;
+    pointer-events: none;
+    display: flex;
+    justify-content: center;
+    z-index: 200;
+  }
+  
+  /* Overlay matches real layout */
+  .grid-overlay-inner {
+    width: calc(100% - (2 * var(--page-margin))); /* same 48px margins */
+    height: 100%;
+  
+    display: grid;
+    grid-template-columns: repeat(var(--grid-columns), 1fr);
+    column-gap: var(--gutter);
+  }
+  
+  .overlay-col {
+    background-color: var(--overlay-color);
+  }
+  
+  /* Hide state */
+  .grid-overlay.hidden {
+    display: none;
+  }
+  
+  /* ===============================
+     GRID TOGGLE BUTTON
+     =============================== */
+  
+  .toggle-btn {
+    position: fixed;
+    bottom: 24px;   /* from bottom */
+    left: 24px;     /* from left */
+    z-index: 100;
+    padding: 8px 14px;
+    border-radius: 999px;
+    border: 1px solid #ccc;
+    background: #fff;
+    font-size: 12px;
+    cursor: pointer;
+  }
+  

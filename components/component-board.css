@@ -1,0 +1,59 @@
+/* ===============================
+   BUTTON DEMO CARD (grid-aligned)
+   =============================== */
+
+   .component-board {
+    /* Desktop: centered card, spans 6 of 12 columns (cols 4–9) */
+    grid-column: 4 / span 6;
+  
+    background-color: #ffffff;
+    border-radius: 24px;
+    border: 1px solid #e2e8f0;
+    padding: 32px 32px 40px;
+    box-shadow: 0 18px 40px rgba(15, 23, 42, 0.12);
+  }
+  
+  /* Typography + spacing inside card */
+  .component-heading {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    margin-bottom: 24px;
+  }
+  
+  .component-subtitle {
+    margin: 0;
+    text-transform: uppercase;
+    letter-spacing: 0.16em;
+    font-size: 12px;
+    font-weight: 600;
+  }
+  
+  /* Button layout inside the card */
+  .button-stage {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 16px;
+    align-items: center;
+  }
+  
+  .button-stage--inline {
+    justify-content: flex-start;
+  }
+  
+  /* Tablet — 6 columns */
+  @media (max-width: 1024px) {
+    .component-board {
+      grid-column: 2 / span 4; /* centered-ish on 6 columns */
+    }
+  }
+  
+  /* Mobile — 4 columns */
+  @media (max-width: 600px) {
+    .component-board {
+      grid-column: 1 / -1;     /* full width of 4-column grid */
+      border-radius: 18px;
+      padding: 24px 20px 28px;
+    }
+  }
+  

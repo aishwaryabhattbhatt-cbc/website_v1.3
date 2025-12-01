@@ -1,0 +1,21 @@
+/* ===========================================
+   RESPONSIVE GRID
+   =========================================== */
+
+/* Tablet — 6 columns */
+@media (max-width: 1024px) {
+    :root {
+      --grid-columns: 6;
+    }
+    /* because both .page-inner and .grid-overlay-inner
+       use repeat(var(--grid-columns), 1fr),
+       they BOTH update automatically */
+  }
+  
+  /* Mobile — 4 columns */
+  @media (max-width: 600px) {
+    :root {
+      --grid-columns: 4;
+    }
+  }
+  

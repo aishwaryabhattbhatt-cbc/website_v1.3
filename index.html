@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>MTM Website</title>
+  <link rel="stylesheet" href="styles.css">
+
+  <link rel="stylesheet" href="components/responsive-grid.css">
+  <link rel="stylesheet" href="components/grid-overlay.css">
+  <link rel="stylesheet" href="components/component-board.css">
+  <link rel="stylesheet" href="components/hero.css">
+  
+  <link rel="stylesheet" href="components/buttons.css">
+  <link rel="stylesheet" href="components/navbar.css">
+</head>
+<body>
+
+    <!-- NAV BAR --> 
+<div class="nav-bar">
+  <div class="nav-inner">
+<!-- LEFT: LOGO + MENU -->
+<div class="nav-main">
+
+    <!-- LOGO -->
+    <a href="#" class="nav-logo">
+      <img src="assets/MTM-CLR.svg" alt="MTM Logo" class="nav-logo-img">
+    </a>
+
+    <!-- MENU using REAL .btn-menu buttons -->
+    <div class="nav-menu">
+      <button class="btn btn-menu" type="button">
+        <span class="btn-text">Solutions</span>
+        <svg class="btn-icon" viewBox="0 0 24 24" aria-hidden="true">
+          <path d="M6 9l6 6 6-6" />
+        </svg>
+      </button>
+
+      <button class="btn btn-menu" type="button">
+        <span class="btn-text">Products</span>
+        <svg class="btn-icon" viewBox="0 0 24 24" aria-hidden="true">
+          <path d="M6 9l6 6 6-6" />
+        </svg>
+      </button>
+
+      <button class="btn btn-menu" type="button">
+        <span class="btn-text">Tools</span>
+        <svg class="btn-icon" viewBox="0 0 24 24" aria-hidden="true">
+          <path d="M6 9l6 6 6-6" />
+        </svg>
+      </button>
+
+      <button class="btn btn-menu" type="button">
+        <span class="btn-text">Insights</span>
+    
+        </svg>
+      </button>
+    </div>
+
+  </div>
+
+    <!-- RIGHT: Primary, Secondary, Language toggle -->
+    <div class="nav-actions">
+        <div class="lang-toggle-group">
+            <button class="lang-toggle is-active" type="button" data-lang="FR" aria-pressed="true">
+              <span class="lang-icon" aria-hidden="true"></span>
+              <span class="lang-label">FR</span>
+            </button>
+            <button class="lang-toggle" type="button" data-lang="EN" aria-pressed="false">
+              <span class="lang-icon" aria-hidden="true"></span>
+              <span class="lang-label">EN</span>
+            </button>
+          </div>
+      <button class="btn btn-secondary" type="button">Sign In</button>
+      <button class="btn btn-primary" type="button">Request A Demo</button>
+
+      
+    </div>
+
+  </div>
+</div> 
+
+  <!-- GRID OVERLAY (visual only) -->
+  <div class="grid-overlay">
+    <div class="grid-overlay-inner">
+      <!-- 12 columns -->
+      <div class="overlay-col"></div>
+      <div class="overlay-col"></div>
+      <div class="overlay-col"></div>
+      <div class="overlay-col"></div>
+      <div class="overlay-col"></div>
+      <div class="overlay-col"></div>
+      <div class="overlay-col"></div>
+      <div class="overlay-col"></div>
+      <div class="overlay-col"></div>
+      <div class="overlay-col"></div>
+      <div class="overlay-col"></div>
+      <div class="overlay-col"></div>
+    </div>
+  </div>
+
+  <!-- TOGGLE BUTTON -->
+  <button id="toggleGrid" class="toggle-btn">Hide Grid</button>
+
+  <!-- MAIN GRID LAYOUT AREA -->
+ <main class="page">
+      
+      <!-- <section class="component-board" aria-labelledby="button-showcase-label">
+        <header class="component-heading">
+          <p class="component-subtitle" id="button-showcase-label">Buttons</p>
+        </header>
+  
+        <div class="button-stage button-stage--inline">
+          <button class="btn btn-primary" type="button">Primary</button>
+          <button class="btn btn-secondary" type="button">Secondary</button>
+          <button class="btn btn-tertiary" type="button">
+            <span class="btn-text">Tertiary</span>
+            <img class="btn-icon" src="assets/arrow_forward.svg" alt="" aria-hidden="true">
+          </button>
+          <button class="btn btn-menu" type="button">
+            <span class="btn-text">Menu</span>
+            <svg class="btn-icon" viewBox="0 0 24 24" aria-hidden="true">
+              <path d="M6 9l6 6 6-6" />
+            </svg>
+          </button>
+        </div>
+      </section>  -->
+
+      <section class="hero">
+        <div class="page-inner hero-grid">
+      
+          <!-- LEFT SIDE: 5 columns -->
+          <div class="hero-left">
+            <h1 class="hero-title">Your Hero Title Goes Here</h1>
+            <p class="hero-subtitle">Supporting text or a short description goes here describing what MTM does.</p>
+      
+            <div class="hero-actions">
+              <button class="btn btn-primary">Request A Demo</button>
+              <button class="btn btn-secondary">Learn More</button>
+            </div>
+          </div>
+      
+          <!-- RIGHT SIDE: rest of columns -->
+          <div class="hero-right">
+            <!-- image, animation, visual, etc. goes here -->
+            <div class="hero-visual"></div>
+          </div>
+      
+        </div>
+      </section>
+      
+    </div>
+
+
+<!-- GRID TOGGLE SCRIPT -->
+  <script>
+    const toggleBtn = document.getElementById('toggleGrid');
+    const overlay = document.querySelector('.grid-overlay');
+
+    toggleBtn.addEventListener('click', () => {
+      overlay.classList.toggle('hidden');
+      toggleBtn.textContent = overlay.classList.contains('hidden')
+        ? 'Show Grid'
+        : 'Hide Grid';
+    });
+  </script>
+
+   <!-- LANGUAGE TOGGLE SCRIPT -->
+   <script>
+    const langButtons = document.querySelectorAll('.lang-toggle');
+
+    langButtons.forEach(btn => {
+      btn.addEventListener('click', () => {
+        const lang = btn.dataset.lang;
+
+        langButtons.forEach(b => {
+          const isActive = b.dataset.lang === lang;
+          b.classList.toggle('is-active', isActive);
+          b.setAttribute('aria-pressed', isActive);
+        });
+      });
+    });
+  </script>
+
+</body>
+</html>
