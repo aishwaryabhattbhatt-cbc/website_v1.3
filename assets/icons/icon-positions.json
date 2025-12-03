@@ -1,0 +1,29 @@
+{
+  "centerOffset": { "x": -10, "y": 0 },
+  "icons": [
+    {
+      "file": "assets/icons/Artboard 1.svg",
+      "orbit": 0,
+      "angle": 320,
+      "tooltip": "Audio Behavior"
+    },
+    {
+      "file": "assets/icons/Artboard 2.svg",
+      "orbit": 1,
+      "angle": 210,
+      "tooltip": "Video Viewing"
+    },
+    {
+      "file": "assets/icons/Artboard 3.svg",
+      "orbit": 2,
+      "angle": 170,
+      "tooltip": "Analytics"
+    },
+    {
+      "file": "assets/icons/Artboard 4.svg",
+      "orbit": 2,
+      "angle": 350,
+      "tooltip": "Mobile Usage"
+    }
+  ]
+}

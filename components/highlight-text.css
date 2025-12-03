@@ -1,0 +1,44 @@
+/* ==========================================================
+   HIGHLIGHT TEXT (angled, animated, italic)
+   ========================================================== */
+
+   .hl-text {
+    --highlight-color: #E4F4C8;      /* default */
+    --highlight-angle: -12deg;        /* highlight slant */
+    --highlight-height: 1.3em;       /* thickness */
+
+  
+    position: relative;
+    display: inline-block;
+    font-family: "DM Serif Display", serif;
+    font-style: italic;
+    font-weight: 100;
+    line-height: 1.1;
+    padding: .2em .2em; /* tiny breathing room so skew doesn't clip text */
+    letter-spacing: 0.005em;
+  }
+  
+  /* Highlight rectangle */
+  .hl-text::before {
+    content: "";
+    position: absolute;
+    left: 0.05em;
+    bottom: 0.05em;
+
+  
+    width: 0%;
+    height: var(--highlight-height);
+  
+    background: var(--highlight-color);
+    transform: skew(var(--highlight-angle));
+    transform-origin: left;
+  
+    transition: width 1000ms ease-out;
+    z-index: -1; /* behind text */
+  }
+  
+  /* Reveal animation */
+  .hl-text.is-visible::before {
+    width: 100%;
+  }
+  

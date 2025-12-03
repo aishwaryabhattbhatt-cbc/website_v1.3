@@ -1,0 +1,56 @@
+/* ===========================================
+   TYPOGRAPHY SYSTEM
+   =========================================== */
+
+/* Headings use Inter by default */
+h1,
+h2,
+h3,
+.hero-title,
+.feature-title {
+  font-family: "Inter", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI",
+               sans-serif;
+  font-weight: 600;  /* semi-bold */
+  letter-spacing: -0.02em;
+}
+
+/* H1 / hero titles */
+h1,
+.hero-title {
+  font-size: clamp(2.5rem, 2.1rem + 1vw, 3.5rem); /* ~40–56px responsive */
+  line-height: 1.1;
+}
+
+/* H2 / section titles */
+h2,
+.feature-title {
+  font-size: clamp(2rem, 1.6rem + 0.8vw, 2.6rem);
+  line-height: 1.15;
+}
+
+/* Text before the highlight in hero */
+.hero-title-base {
+  font-family: "Inter", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI",
+               sans-serif;
+  font-weight: 500;
+}
+
+/* Hero subtitle */
+.hero-subtitle {
+  font-family: "Inter", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI",
+               sans-serif;
+  font-size: 1.125rem;   /* 18px */
+  font-weight: 400;
+  line-height: 1.5;
+  color: #475467;
+  
+}
+
+/* Body text helper (optional) */
+.body-text {
+  font-family: "Inter", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI",
+               sans-serif;
+  font-size: 1rem;
+  line-height: 1.5;
+  color: #111827;
+}

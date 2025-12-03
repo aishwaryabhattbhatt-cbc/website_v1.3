@@ -5,6 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>MTM Website</title>
   <link rel="stylesheet" href="styles.css">
+  
 
   <link rel="stylesheet" href="components/responsive-grid.css">
   <link rel="stylesheet" href="components/grid-overlay.css">
@@ -13,6 +14,17 @@
   
   <link rel="stylesheet" href="components/buttons.css">
   <link rel="stylesheet" href="components/navbar.css">
+  <link rel="stylesheet" href="components/highlight-text.css">
+  <link rel="stylesheet" href="components/typography.css">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display&display=swap" rel="stylesheet">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+
 </head>
 <body>
 
@@ -81,7 +93,7 @@
 </div> 
 
   <!-- GRID OVERLAY (visual only) -->
-  <div class="grid-overlay">
+  <div class="grid-overlay hidden">
     <div class="grid-overlay-inner">
       <!-- 12 columns -->
       <div class="overlay-col"></div>
@@ -100,40 +112,29 @@
   </div>
 
   <!-- TOGGLE BUTTON -->
-  <button id="toggleGrid" class="toggle-btn">Hide Grid</button>
+  <button id="toggleGrid" class="toggle-btn">Show Grid</button>
 
   <!-- MAIN GRID LAYOUT AREA -->
  <main class="page">
-      
-      <!-- <section class="component-board" aria-labelledby="button-showcase-label">
-        <header class="component-heading">
-          <p class="component-subtitle" id="button-showcase-label">Buttons</p>
-        </header>
-  
-        <div class="button-stage button-stage--inline">
-          <button class="btn btn-primary" type="button">Primary</button>
-          <button class="btn btn-secondary" type="button">Secondary</button>
-          <button class="btn btn-tertiary" type="button">
-            <span class="btn-text">Tertiary</span>
-            <img class="btn-icon" src="assets/arrow_forward.svg" alt="" aria-hidden="true">
-          </button>
-          <button class="btn btn-menu" type="button">
-            <span class="btn-text">Menu</span>
-            <svg class="btn-icon" viewBox="0 0 24 24" aria-hidden="true">
-              <path d="M6 9l6 6 6-6" />
-            </svg>
-          </button>
-        </div>
-      </section>  -->
-
+    
       <section class="hero">
         <div class="page-inner hero-grid">
       
           <!-- LEFT SIDE: 5 columns -->
           <div class="hero-left">
-            <h1 class="hero-title">Your Hero Title Goes Here</h1>
-            <p class="hero-subtitle">Supporting text or a short description goes here describing what MTM does.</p>
-      
+            <!-- HEADING -->
+            <h1 class="hero-title">
+              
+              <span class="hl-text">
+                Media & Tech
+              </span>
+              <span class="hero-title-base">insights for data driven decisions</span>
+            </h1>
+
+            <!-- SUBTITLE -->
+            <p class="hero-subtitle">Unlock a clearer understanding of how Canadians consume media and adopt new technologies. MTM turns complex datasets into actionable insights so you can plan confidently and stay ahead of change.
+            </p>
+            
             <div class="hero-actions">
               <button class="btn btn-primary">Request A Demo</button>
               <button class="btn btn-secondary">Explore More</button>
@@ -142,8 +143,8 @@
       
           <!-- RIGHT SIDE: rest of columns -->
           <div class="hero-right">
-            <!-- image, animation, visual, etc. goes here -->
-            <div class="hero-visual"></div>
+              <div class="hero-visual" data-hero-scene></div>
+    
           </div>
       
         </div>
@@ -181,6 +182,31 @@
       });
     });
   </script>
+
+<script>
+  // Animate highlight when it enters viewport
+  const highlightEls = document.querySelectorAll('.hl-text');
+
+  if ('IntersectionObserver' in window && highlightEls.length) {
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('is-visible');
+          observer.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.4 });
+
+    highlightEls.forEach(el => observer.observe(el));
+  } else {
+    // Fallback
+    highlightEls.forEach(el => el.classList.add('is-visible'));
+  }
+</script>
+
+<script src="scene.js"></script>
+<script src="main.js"></script>
+
 
 </body>
 </html>
