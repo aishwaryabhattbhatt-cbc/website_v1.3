@@ -6,6 +6,7 @@
     --highlight-color: #E4F4C8;      /* default */
     --highlight-angle: -12deg;        /* highlight slant */
     --highlight-height: 1.3em;       /* thickness */
+    --highlight-delay: 0s;
 
   
     position: relative;
@@ -34,6 +35,7 @@
     transform-origin: left;
   
     transition: width 1000ms ease-out;
+    transition-delay: var(--highlight-delay);
     z-index: -1; /* behind text */
   }
   
