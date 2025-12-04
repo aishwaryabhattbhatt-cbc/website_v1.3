@@ -6,7 +6,7 @@
     --highlight-color: #E4F4C8;      /* default */
     --highlight-angle: -12deg;        /* highlight slant */
     --highlight-height: 1.3em;       /* thickness */
-    --highlight-delay: 0s;
+    --highlight-delay: 0.75s;
 
   
     position: relative;
