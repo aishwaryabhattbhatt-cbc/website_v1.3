@@ -71,7 +71,7 @@
     // We want:
     // - 0 → holdStart of scroll: play full F1 → F3 animation 0 → 1
     // - holdStart → 1: keep t fixed at 1 (hold final frame)
-    const holdStart = 0.8;  // 80% scroll used for animation
+    const holdStart = 0.75;  // 80% scroll used for animation
     let t;
     if (raw < holdStart) {
       t = raw / holdStart;   // scales 0..holdStart → 0..1

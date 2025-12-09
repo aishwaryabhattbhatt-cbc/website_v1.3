@@ -159,8 +159,8 @@
 .lang-toggle {
     display: inline-flex;
     align-items: center;
-    gap: 8px;
-    padding: 0;
+    gap: 6px;
+    padding: 6px;
     background: transparent;
     border: none;
     font-size: 16px;
@@ -195,7 +195,7 @@
 
 .lang-toggle-group {
     display: inline-flex;
-    gap: 24px;  /* Increase spacing between FR and EN */
+    gap: 32px;  /* Increase spacing between FR and EN */
   }
   
 
