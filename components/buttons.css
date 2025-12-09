@@ -195,7 +195,7 @@
 
 .lang-toggle-group {
     display: inline-flex;
-    gap: 16px;  /* Increase spacing between FR and EN */
+    gap: 24px;  /* Increase spacing between FR and EN */
   }
   
 
