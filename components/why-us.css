@@ -6,7 +6,7 @@
 .why-us {
     position: relative;
     width: 100%;
-    min-height: 280vh;              /* adjust if you want more/less scroll */
+    min-height: 250vh;              /* adjust if you want more/less scroll */
     background: #ffffff;
     z-index: 2;                     /* above hero background, below overlays */
   }
