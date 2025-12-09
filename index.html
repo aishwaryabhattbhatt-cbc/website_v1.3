@@ -12,6 +12,10 @@
   <link rel="stylesheet" href="components/component-board.css">
   <link rel="stylesheet" href="components/hero.css">
   <link rel="stylesheet" href="components/hero-animation.css">
+  <link rel="stylesheet" href="components/why-us.css">
+  <link rel="stylesheet" href="components/reports.css">
+
+
 
 
   <link rel="stylesheet" href="components/buttons.css">
@@ -120,7 +124,8 @@
  <main class="page">
     
       <section class="hero">
-        <div class="page-inner hero-grid">
+      
+          <div class="page-inner hero-grid">
       
           <!-- LEFT SIDE: 5 columns -->
           <div class="hero-left">
@@ -148,11 +153,56 @@
             <div class="hero-visual" data-hero-scene></div>
           </div>
           
-      
+        
+        
         </div>
       </section>
+
+      <!-- WHY US SECTION -->
+      <section class="why-us">
+        <div class="why-us-inner">
+          <div class="why-us-stage">
+            
+            <!-- Translucent grey "image" box -->
+            <div class="why-us-image">
+              <img
+                src="assets/Home-WhyUsImage.png"
+                alt="Why MTM helps you make better decisions"
+                class="why-us-image-img"
+              >
+            </div>
+            
+            
+
+
+            <!-- Three blue panels -->
+            <div class="why-us-text panel-top">
+              <h2>Why Leading Organizations Trust Us</h2>
+              <p>
+                We deliver strategic advantages with our data-driven insights into Canadian media habits. 
+                Our detailed reports, powered by cutting-edge analytical tools, are known for their 
+                actionable intelligence, ensuring leaders remain at the forefront of industry trends.
+              </p>
+            </div>
+            
+
+            <div class="why-us-imagebox panel-left">
+              <img src="/website_v1.3/assets/left-whyus.svg" alt="" class="whyus-side-img">
+            </div>
+            
+            <div class="why-us-imagebox panel-right">
+              <img src="/website_v1.3/assets/right-whyus.svg" alt="" class="whyus-side-img">
+            </div>
+            
+          </div>
+        </div>
+      </section>
+
+      <section class="next-section-placeholder">
+      </section>
+    
+    </main>
       
-    </div>
 
 
 <!-- GRID TOGGLE SCRIPT -->
@@ -206,8 +256,38 @@
   }
 </script>
 
-<script src="scene.js"></script>
-<script type="module" src="main.js"></script>
+<script src="/website_v1.3/scene.js"></script>
+<script type="module" src="/website_v1.3/main.js"></script>
+<script src="/website_v1.3/scroll-whyus.js"></script>
+
+<script>
+  (function () {
+    const section = document.querySelector('.why-us');
+    const panels = document.querySelector('.why-us-panels');
+    if (!section || !panels) return;
+
+    let hasShown = false;
+
+    function onScroll() {
+      if (hasShown) return;
+
+      const rect = section.getBoundingClientRect();
+      const viewportHeight = window.innerHeight;
+
+      // Trigger when the why-us section top is within upper half of viewport
+      const triggerPoint = viewportHeight * 0.5;
+
+      if (rect.top <= triggerPoint) {
+        panels.classList.add('show-panels');
+        hasShown = true; // animate only once
+      }
+    }
+
+    window.addEventListener('scroll', onScroll, { passive: true });
+    window.addEventListener('resize', onScroll);
+    onScroll();
+  })();
+</script>
 
 
 

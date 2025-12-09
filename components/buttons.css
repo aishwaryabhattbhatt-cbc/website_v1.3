@@ -179,8 +179,8 @@
     display: inline-block;
     flex-shrink: 0;
     background-color: currentColor;
-    mask: url('/assets/language.svg') no-repeat center / contain;
-    -webkit-mask: url('/assets/language.svg') no-repeat center / contain;
+    mask: url('/website_v1.3/assets/language.svg') no-repeat center / contain;
+    -webkit-mask: url('/website_v1.3/assets/language.svg') no-repeat center / contain;
 }
 
 

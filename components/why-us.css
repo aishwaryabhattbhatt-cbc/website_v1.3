@@ -1,0 +1,116 @@
+/* ============================
+   WHY US – SCROLL SCENE
+   ============================ */
+
+/* Tall section so we have enough scroll distance */
+.why-us {
+    position: relative;
+    width: 100%;
+    min-height: 280vh;              /* adjust if you want more/less scroll */
+    background: #ffffff;
+    z-index: 2;                     /* above hero background, below overlays */
+  }
+  
+  /* Sticky viewport "stage" inside Why Us */
+  .why-us-inner {
+    position: sticky;
+    top: 78px;                      /* same as navbar height */
+    width: 100%;
+    height: calc(100vh - 78px);     /* full viewport minus navbar */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .why-us-stage {
+    position: relative;
+    width: 100%;
+    height: 100%;      /* FULL viewport height inside sticky area */
+    overflow: visible; /* keep animation space */
+  }
+  
+  
+  /* Translucent grey "image" box
+     Frame 1: fills the entire stage
+     Frame 2+3: JS scales it down into a centered card */
+  .why-us-image {
+    position: absolute;
+    opacity: 1; 
+    inset: 0;                        /* full stage in Frame 1 */
+    border-radius: 0;                /* becomes rounded as it shrinks */
+    pointer-events: none;
+    transform-origin: center center;
+    will-change: transform, border-radius;
+    transform-origin: center;
+    overflow: hidden;
+    z-index: 1;
+  }
+
+/* FORCE the image to fill the entire why-us-image box */
+.why-us-image img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;    /* makes the image behave like a background-image cover */
+    object-position: center;
+  }
+  
+  
+  
+/* Shared box for left/right images */
+.why-us-imagebox {
+    position: absolute;
+    transform: translate(-50%, -50%);
+    will-change: top, left;
+    z-index: 0;         /* behind the main why-us image */
+    /* NO width/height here – let the image decide size */
+  }
+  
+  .whyus-side-img {
+    display: block;
+    width: auto;
+    height: auto;
+    max-width: none;
+    max-height: none;
+  }
+  
+
+  /* Initial positions roughly matching FRAME 1
+     (JS will override immediately on load) */
+  
+  /* top rectangle in the middle-upper area */
+  .panel-top {
+    top: 24%;
+    left: 50%;
+  }
+  
+  /* bottom-left rectangle */
+  .panel-left {
+    top: 70%;
+    left: 40%;
+  }
+  
+  /* bottom-right rectangle */
+  .panel-right {
+    top: 70%;
+    left: 60%;
+  }
+
+  /* TEXT BOX replacing the top panel */
+.why-us-text {
+    position: absolute;
+    width: 70%;
+    max-width: none;
+    transform: translate(-50%, -50%);
+    z-index: 0;        /* Above image but below anything else */
+    display: flex;
+    flex-direction: column;
+    gap: 16px;         /* spacing between h2 and body */
+    text-align: center;
+  }
+  
+
+  
+  

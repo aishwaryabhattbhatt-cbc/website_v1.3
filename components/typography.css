@@ -22,11 +22,17 @@ h1,
 }
 
 /* H2 / section titles */
+
 h2,
 .feature-title {
-  font-size: clamp(2rem, 1.6rem + 0.8vw, 2.6rem);
-  line-height: 1.15;
+  font-family: 'Inter', sans-serif;
+  font-weight: 500;          /* semibold */
+  font-size: 40px;           /* fixed size you asked for */
+  line-height: 1.3;         /* same as before */
+  margin: 0;                 /* optional but recommended */
 }
+
+
 
 /* Text before the highlight in hero */
 .hero-title-base {

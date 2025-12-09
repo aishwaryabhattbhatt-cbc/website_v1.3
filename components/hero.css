@@ -2,23 +2,28 @@
    HERO SECTION
    ============================ */
 
-   .hero {
+  
 
-    /* hero fills viewport *below* the 78px navbar */
-    min-height: calc(100vh - 78px);
-    padding: 48px;           /* equal top and bottom */
+  .hero {
+    position: sticky;
+    top: 78px;                             /* sits just under navbar */
+    height: calc(100vh - 78px);           /* full viewport below nav */
     display: flex;
-    align-items: stretch;      
+    align-items: center;
+    padding: 0;                            /* remove 48px padding here */
+    z-index: 1;                            /* below Why Us */
   }
   
-  /* Use your grid system */
+  /* Grid fills the sticky area */
   .hero-grid {
     display: grid;
     grid-template-columns: repeat(var(--grid-columns), 1fr);
     column-gap: var(--gutter);
     width: 100%;
+    height: 100%;                          /* important for right side */
+    padding: 48px; /* <-- restore padding here */
   }
-  
+
   /* Desktop layout */
   .hero-left {
     grid-column: span 5;
